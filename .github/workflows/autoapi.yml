@@ -9,13 +9,10 @@ on:
       - master
   schedule:
     - cron: '*/30 * * * *'
-  watch:
-    types: [started]
    
 jobs:
    Task:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
     - name: Checkout
       uses: actions/checkout@master
